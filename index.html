@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Religious Questions</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5f9;
+        }
+        .banner {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0077b6;
+            color: #fff;
+            font-size: 32px; /* You can adjust the font size as needed */
+        }
+        .ai-select-div {
+            background-color: #0077b6;
+            color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #d0d9e2;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0077b6;
+            color: #fff;
+        }
+        th, td:nth-child(4) {
+            min-width: 100px;
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+        tfoot td {
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="banner">AI Bible Topic Grader</div>
+    <div class="ai-select-div">
+        <label for="ai-select">LLM/AI Product:</label>
+        <select name="ais" id="ai-select">
+            <option value="">--Please choose an option--</option>
+            <option value="chatgpt-3.5">OpenAI ChatGPT-3.5</option>
+            <option value="chatgpt-4.0">OpenAI ChatGPT-4.0</option>
+            <option value="claude">Anthropic Claude</option>
+            <option value="bard">Google Bard</option>
+            <option value="christianchatbot">Christian Chatbot</option>
+        </select>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Human Answer<br />(Pastor / Mature Christian)</th>
+                <th>AI Answer</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="question-1">Why does God allow evil and suffering?</span><br /><button type="button" onclick="editQuestion('question-1')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#questionModal1">Edit</button></td>
+                <td></td>
+                <td>
+                    God's allowance of evil and suffering is a complex theological question. Many theologians propose that suffering serves various purposes, such as testing faith, building character, and allowing free will. Some argue that it's a consequence of human choices. Ultimately, it's a topic of deep debate among believers.
+                </td>
+                <td>
+                    <label for="grade1">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade1" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_1" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Is the Bible reliable?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    The reliability of the Bible is a subject of extensive discussion. Many view it as a sacred and authoritative text, while others approach it more critically. Scholars assess its reliability by examining historical and archaeological evidence, textual integrity, and consistency. Ultimately, opinions on its reliability vary.
+                </td>
+                <td>
+                    <label for="grade2">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade2" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_2" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Explain how the Bible describes God. Can a person have a relationship with God?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    The Bible describes God in multifaceted ways, such as a loving creator, a just judge, and a compassionate savior. Many believers find a personal relationship with God through prayer, worship, and faith. It's a deeply spiritual and individual experience.
+                </td>
+                <td>
+                    <label for="grade3">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade3" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_3" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Explain what it means that Jesus died on the cross for our sins.<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    Christians believe that Jesus' crucifixion was a sacrificial act to atone for humanity's sins. It's seen as a demonstration of God's love and forgiveness, offering salvation to those who accept it. It's a central concept in Christian theology.
+                </td>
+                <td>
+                    <label for="grade4">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade4" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_4" rows="4">Enter Comments here...</textarea>
+            </tr>
+            <tr>
+                <td>Explain the evidence and case for the resurrection of Jesus.<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    The case for Jesus' resurrection is primarily based on biblical accounts and early Christian writings. Believers argue that these sources provide compelling evidence, while skeptics seek additional historical corroboration. The topic remains a matter of faith and debate.
+                </td>
+                <td>
+                    <label for="grade5">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade5" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_5" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Were there miracles in the Bible?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    The Bible contains numerous accounts of miracles, such as healings, parting of the Red Sea, and Jesus' miracles. Believers interpret these as divine interventions, while skeptics often approach them as metaphorical or legendary elements. The perception of miracles varies widely.
+                </td>
+                <td>
+                    <label for="grade6">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade6" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_6" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>How is Christianity different from other religions?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    Christianity differs from other religions in its core beliefs and practices. It centers on Jesus as the Son of God and savior, while other faiths have distinct teachings and figures. These differences shape Christian doctrine and identity.
+                </td>
+                <td>
+                    <label for="grade7">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade7" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_7" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>How can there be one way to God?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    The concept of one way to God is a fundamental belief in some religions, including Christianity. It's based on the idea that a specific path or faith is the sole means of connecting with the divine. This belief is central to religious exclusivism and is deeply theological.
+                </td>
+                <td>
+                    <label for="grade8">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade8" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_8" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Will Jesus return again, and what will that be like?<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    Christians anticipate Jesus' return, often referred to as the Second Coming. It's believed to bring judgment, the establishment of God's kingdom, and the fulfillment of prophecy. The details vary among Christian denominations, but it's a central eschatological doctrine.
+                </td>
+                <td>
+                    <label for="grade9">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade9" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_9" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Explain heaven and hell.<br /><button type="button">edit</button></td>
+                <td></td>
+                <td>
+                    Heaven and hell are contrasting afterlife destinations. Heaven is depicted as eternal joy in God's presence, while hell is a realm of separation and suffering. Beliefs about these places vary across religions and denominations.
+                </td>
+                <td>
+                    <label for="grade10">Grade&nbsp;</label><input type="number" min="0" max="100" id="grade10" onchange="calculateTotalScore()" />
+                    <br />
+                    Comments:
+                    <textarea name="comments_question_10" rows="4">Enter Comments here...</textarea>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" align="right">Total Grade Score:</td>
+                <td>
+                    <span id="totalScore">0</span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Modal for editing questions -->
+    <div class="modal fade" id="questionModal1" tabindex="-1" aria-labelledby="questionModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="questionModalLabel1">Edit Question</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Textarea to edit the question -->
+                    <textarea class="form-control" id="editQuestionText" rows="5"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveEditedQuestion()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to calculate the total score -->
+    <script>
+        // Function to calculate the total score
+        function calculateTotalScore() {
+            let total = 0;
+            // Loop through all the grade input elements with unique id and name attributes
+            for (let i = 1; i <= 10; i++) {
+                const gradeInput = document.getElementById(`grade${i}`);
+                // Check if both grade and score input elements exist
+                if (gradeInput) {
+                    const gradeValue = parseFloat(gradeInput.value) || 0;
+                    total += gradeValue;
+                    console.log(total);
+                }
+            }
+            // Update the totalScore span
+            const totalScoreSpan = document.getElementById('totalScore');
+            if (totalScoreSpan) {
+                totalScoreSpan.textContent = total.toFixed(2); // Display the total with two decimal places
+            }
+        }
+
+        // Function to display the question in the modal and update it
+        function editQuestion(questionId) {
+            const questionSpan = document.getElementById(questionId);
+            if (questionSpan) {
+                const questionText = questionSpan.innerText;
+                const editQuestionText = document.getElementById('editQuestionText');
+                if (editQuestionText) {
+                    editQuestionText.value = questionText;
+                }
+            }
+        }
+
+        // Function to save the edited question and update the span
+        function saveEditedQuestion() {
+            const editQuestionText = document.getElementById('editQuestionText');
+            if (editQuestionText) {
+                const editedQuestion = editQuestionText.value;
+                const questionSpan = document.getElementById('question-1');
+                if (questionSpan) {
+                    questionSpan.innerText = editedQuestion;
+                }
+            }
+            // Close the modal
+            const modalEl = document.getElementById('questionModal1');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            modal.hide();
+        }
+        function saveInfo(){
+            
+        }
+    </script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>
