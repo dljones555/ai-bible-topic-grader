@@ -1,6 +1,10 @@
 # ai-bible-topic-grader
 Project for Gloo AI and the Church Hackathon
 
+**Note: switch to the dev branch for code and assets.**
+
+Github Pages link: [AI Bible Topic Grader](https://dljones555.github.io/ai-bible-topic-grader) 
+
 Roadmap:
 
 - Vet product market fit. Research any existing consumer facing AI testing tools and frameworks.
