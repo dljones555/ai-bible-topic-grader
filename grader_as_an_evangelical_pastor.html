@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Bible Teacher???</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Human Answer</th>
+                <th>AI Answer</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Why does God allow evil and suffering?</td>
+                <td></td>
+                <td>
+                    God allows evil and suffering as a consequence of human rebellion against His perfect will, which began with Adam and Eve's sin. Suffering serves to reveal the depth of our need for Him, testing our faith and character. It ultimately points us to the redemptive work of Jesus on the cross.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                    <br />
+                    Comments:
+                    <input name="comments_question_1" type="text" maxlength="100" />
+                </td>
+            </tr>
+            <tr>
+                <td>Is the Bible reliable?</td>
+                <td></td>
+                <td>
+                    The Bible is absolutely reliable, as it is the inspired, inerrant Word of God. It contains historical accuracy, prophetic fulfillment, and divine wisdom. It is the foundation of our faith and the ultimate source of truth for believers.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Explain how the Bible describes God. Can a person have a relationship with God?</td>
+                <td></td>
+                <td>
+                    The Bible describes God as the triune God—Father, Son (Jesus Christ), and Holy Spirit. A person can have a personal relationship with God through faith in Jesus Christ. This relationship is made possible through Christ's sacrifice on the cross and is nurtured through prayer, worship, and studying the Word.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Explain what it means that Jesus died on the cross for our sins.</td>
+                <td></td>
+                <td>
+                    Jesus' death on the cross is the central act of God's love and grace. He bore the punishment for our sins, offering forgiveness and reconciliation with God. Through faith in Christ, we are justified, declared righteous, and have eternal life.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Explain the evidence and case for the resurrection of Jesus.</td>
+                <td></td>
+                <td>
+                    The resurrection of Jesus is a historical fact supported by eyewitness testimonies, early Christian writings, and transformed lives of His disciples. It validates His claims and the truth of Christianity. Belief in the resurrection is foundational to our faith.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Were there miracles in the Bible?</td>
+                <td></td>
+                <td>
+                    Yes, the Bible records numerous miracles as manifestations of God's power and love. These miracles include healings, nature's control, and Jesus' supernatural acts. They testify to God's presence and His ability to intervene in human affairs.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>How is Christianity different from other religions?</td>
+                <td></td>
+                <td>
+                    Christianity is unique in its belief in Jesus Christ as the Son of God and Savior of humanity. Unlike other religions, it emphasizes God's grace and salvation through faith, not works. It offers a personal relationship with God through Christ.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>How can there be one way to God?</td>
+                <td></td>
+                <td>
+                    Jesus declared Himself as "the way, the truth, and the life." Christianity teaches that salvation comes through Him alone, as He paid the price for our sins. It's not about exclusivity but God's provision of redemption through Christ.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Will Jesus return again, and what will that be like?</td>
+                <td></td>
+                <td>
+                    Yes, Jesus will return in glory, fulfilling prophecies. His return will bring judgment, the establishment of God's kingdom, and the ultimate victory of good over evil. Believers eagerly await His coming as the culmination of God's plan.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+            <tr>
+                <td>Explain heaven and hell.</td>
+                <td></td>
+                <td>
+                    Heaven is the eternal dwelling place of the righteous in God's presence, characterized by joy and peace. Hell is a place of separation from God, where unrepentant sinners face eternal punishment. These destinations are based on our response to Christ.
+                </td>
+                <td>
+                    <input type="number" min="0" max="100" placeholder="Weight %" />
+                    <input type="number" min="0" max="100" placeholder="Grade" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" align="right">Total Grade Score:</td>
+                <td>
+                    <span id="totalScore">0</span>
+                </td>
+        </tfoot>
+    </table>
+
+    
+    <!-- JavaScript to calculate the total score -->
+    <script>
+        // Function to calculate the total score
+        function calculateTotalScore() {
+            let total = 0;
+            // Loop through all the grade input elements with unique id and name attributes
+            for (let i = 1; i <= 10; i++) {
+                const gradeInput = document.getElementById(`grade${i}`);
+                // Check if both grade and score input elements exist
+                if (gradeInput) {
+                    const gradeValue = parseFloat(gradeInput.value) || 0;
+                    total += gradeValue;
+                }
+            }
+            // Update the totalScore span
+            const totalScoreSpan = document.getElementById('totalScore');
+            if (totalScoreSpan) {
+                totalScoreSpan.textContent = total.toFixed(2); // Display the total with two decimal places
+            }
+        }
+
+        // Attach the calculateTotalScore function to the input elements' onchange event
+        for (let i = 1; i <= 10; i++) {
+            const gradeInput = document.getElementById(`grade${i}`);
+            if (gradeInput) {
+                scoreInput.addEventListener('change', calculateTotalScore);
+            }
+        }
+
+        // Calculate the initial total score
+        calculateTotalScore();
+    </script>
+</body>
+</html>
