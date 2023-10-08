@@ -23,3 +23,4 @@ Roadmap:
 - Implement question versioning
 - Model question/prompt refinement and ability to model a dialog of questions and answers with an AI
 - Consider generalized application for any topic
+- Consider working with big tech and major AI and LLM companies towards AI safety practices respecting the sanctity of the Church for stewarding Christian thinking and accuracy
