@@ -3,7 +3,7 @@ Project for Gloo AI and the Church Hackathon
 
 **Note: switch to the dev branch for code and assets.**
 
-Live POC demo: [I Bible Topic Grader](https://dljones555.github.io/ai-bible-topic-grader) 
+Live POC demo: [AI Bible Topic Grader](https://dljones555.github.io/ai-bible-topic-grader) 
 
 Roadmap:
 
